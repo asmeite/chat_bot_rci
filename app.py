@@ -5,8 +5,10 @@ from PyPDF2 import PdfReader
 from openai import OpenAI
 
 # Charger variables d'environnement
-load_dotenv()
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+# load_dotenv()
+api_key = st.secrets["OPENAI_API_KEY"]
+client = OpenAI(api_key=api_key)
+
 
 st.set_page_config(page_title="Assistant Documents Auto", page_icon="🚘", layout="wide")
 st.title("🚘 Assistant Carte Grise & Factures")
